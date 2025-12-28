@@ -1,0 +1,21 @@
+services:
+  vigilante:
+    build: .
+    container_name: vigilante_bot
+    restart: unless-stopped
+    networks:
+      - mi-red-privada
+    environment:
+      - TZ=America/Mexico_City
+      # 👇 AQUÍ VAN TUS CREDENCIALES DE TELEGRAM (Sin comillas)
+      - TELEGRAM_TOKEN=8317351376:AAElbOINyCqHGWo377l5nOGcqcVUC6gvPZc
+      - TELEGRAM_CHAT_ID=5396721271
+      # Si tu bot usa la base de datos:
+      - DB_HOST=postgres_db
+      - DB_NAME=db_crypto
+      - DB_USER=postgres
+      - DB_PASS=Imagine1994!
+
+networks:
+  mi-red-privada:
+    external: true
