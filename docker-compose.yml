@@ -7,14 +7,13 @@ services:
       - mi-red-privada
     environment:
       - TZ=America/Mexico_City
-      # 👇 AQUÍ VAN TUS CREDENCIALES DE TELEGRAM (Sin comillas)
-      - TELEGRAM_TOKEN=8317351376:AAElbOINyCqHGWo377l5nOGcqcVUC6gvPZc
-      - TELEGRAM_CHAT_ID=5396721271
-      # Si tu bot usa la base de datos:
+
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
       - DB_HOST=postgres_db
       - DB_NAME=db_crypto
       - DB_USER=postgres
-      - DB_PASS=Imagine1994!
+      - DB_PASS=${DB_PASS}
 
 networks:
   mi-red-privada:
